@@ -1,7 +1,7 @@
 //import functions and data
 const router = require('express').Router();
 const notes = require('../../db/db.json');
-
+const { createNote } = require('../../lib/notes');
 
 // get function imports db.json data
 router.get('/notes', (req, res) => {
@@ -9,12 +9,11 @@ router.get('/notes', (req, res) => {
     res.json(results);
 })
 
-// router.post('/notes', (req, res) => {
-// //receive a new note to save on the request body
-// //add it to the db.json file
-// //and then return the new note to the client.
-// //each note should have a unique id
-// })
+// post function that writes into db.json file
+router.post('/notes', (req, res) => {
+    let note = createNote(req.body, notes);
+    res.json(note);
+})
 
 // router.delete('/notes/:id', (req, res) => {
 
