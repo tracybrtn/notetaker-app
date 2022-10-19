@@ -17,7 +17,7 @@ app.use(express.static('public'));
 
 // Routes for notes and index
 //app.use('/api', apiRoutes);
-//app.use('/', htmlRoutes);
+app.use('/', htmlRoutes);
 
 //listen for connection 
 app.listen(PORT, () => {
