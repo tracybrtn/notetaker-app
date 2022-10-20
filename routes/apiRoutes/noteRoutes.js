@@ -15,6 +15,7 @@ router.post('/notes', (req, res) => {
     res.json(note);
 });
 
+//delete function that deletes entries by their id in the db.json file
 router.delete('/notes/:id', (req, res) => {
     deleteNote(noteDb, req.params.id);
     res.json(noteDb)
